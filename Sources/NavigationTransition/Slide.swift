@@ -38,6 +38,10 @@ public struct Slide: NavigationTransition {
 		self.init(axis: .horizontal)
 	}
 
+	public var axis {
+		return self.axis
+	}
+
 	public var body: some NavigationTransition {
 		switch axis {
 		case .horizontal:
