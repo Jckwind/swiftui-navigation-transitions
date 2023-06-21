@@ -20,8 +20,8 @@ public struct AnyNavigationTransition {
 		case primitive(PrimitiveHandler)
 	}
 
+	public let isVertical: Bool
 	@_spi(package) public let isDefault: Bool
-	@_spi(package) public let isVertical: Bool
 	@_spi(package) public let handler: Handler
 	@_spi(package) public var animation: Animation? = .default
 
