@@ -38,7 +38,7 @@ public struct Slide: NavigationTransition {
 		self.init(axis: .horizontal)
 	}
 
-	public var axis: Axis {
+	public var getAxis: Axis {
 		return self.axis
 	}
 

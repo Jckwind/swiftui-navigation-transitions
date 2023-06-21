@@ -161,7 +161,7 @@ extension UINavigationController {
 
 		if edgePanRecognizer == nil {
 			edgePanRecognizer = UIScreenEdgePanGestureRecognizer()
-			if let slideTransition = transition as? Slide, slideTransition.axis != .horizontal {
+			if let slideTransition = transition as? Slide, slideTransition.getAxis != .horizontal {
    				edgePanRecognizer.edges = .top
 			} else {
    				edgePanRecognizer.edges = .left
