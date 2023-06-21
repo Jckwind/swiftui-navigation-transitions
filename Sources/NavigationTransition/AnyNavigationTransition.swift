@@ -21,16 +21,27 @@ public struct AnyNavigationTransition {
 	}
 
 	@_spi(package) public let isDefault: Bool
+	@_spi(package) public let isVertical: Bool
 	@_spi(package) public let handler: Handler
 	@_spi(package) public var animation: Animation? = .default
 
 	public init<T: NavigationTransition>(_ transition: T) {
 		self.isDefault = false
+		if let slideTransition as? Slide, slideTransition.getAxis == .vertical {
+			self.isVertical = true
+		} else {
+			self.isVertical = false
+		}
 		self.handler = .transient(transition.transition(from:to:for:in:))
 	}
 
 	public init<T: PrimitiveNavigationTransition>(_ transition: T) {
 		self.isDefault = transition is Default
+		if let slideTransition as? Slide, slideTransition.getAxis == .vertical {
+			self.isVertical = true
+		} else {
+			self.isVertical = false
+		}
 		self.handler = .primitive(transition.transition(with:for:in:))
 	}
 }
