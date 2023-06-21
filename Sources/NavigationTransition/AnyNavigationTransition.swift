@@ -27,7 +27,7 @@ public struct AnyNavigationTransition {
 
 	public init<T: NavigationTransition>(_ transition: T) {
 		self.isDefault = false
-		if let slideTransition as? Slide, slideTransition.getAxis == .vertical {
+		if let slideTransition = transition as? Slide, slideTransition.getAxis == .vertical {
 			self.isVertical = true
 		} else {
 			self.isVertical = false
