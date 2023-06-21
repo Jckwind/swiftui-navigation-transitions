@@ -161,7 +161,7 @@ extension UINavigationController {
 
 		if edgePanRecognizer == nil {
 			edgePanRecognizer = UIScreenEdgePanGestureRecognizer()
-			edgePanRecognizer.edges = .left
+			edgePanRecognizer.edges = .top
 			// if transition.isVertical {
 			// 	edgePanRecognizer.edges = .top
 			// } else {
